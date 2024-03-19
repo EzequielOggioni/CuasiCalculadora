@@ -1,0 +1,12 @@
+<input type="number"   [(ngModel)]="this.sumadora.numero1" >
+
+<select   [(ngModel)]="this.sumadora.operacion">
+    <option value="1">+</option>
+    <option value="2">-</option>
+    <option value="3">/</option>
+    <option value="4">*</option>
+</select>
+<input type="number"  [(ngModel)]="this.sumadora.numero2" >
+    <input type="button" (click)="this.sumadora.calcular()" value="=" >
+    <b>{{this.sumadora.resultado}}</b>
+    
