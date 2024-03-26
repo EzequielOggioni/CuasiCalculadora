@@ -28,8 +28,8 @@ export class Sumadora {
       default:
         this.resultado = 0;
     }
-    this.numero1 =this.resultado;
-    this.numero2 = 0;
+    this.numero2 =this.resultado;
+    this.numero1 = 0;
   }
 
   public concatenar(valor: number) {
@@ -40,6 +40,7 @@ export class Sumadora {
   }
 
   public realizarOperacion(operacion: number) {
+    if(this.numero1!= 0) this.calcular();
     this.operacion = parseInt(operacion.toString());
     this.numero1 = this.numero2;
     this.limpiar();

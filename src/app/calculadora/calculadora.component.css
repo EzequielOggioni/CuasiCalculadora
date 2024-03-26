@@ -1,3 +1,6 @@
 .completo{
     width:  100%;
 }
+.row>*{
+        padding: 0;
+}
