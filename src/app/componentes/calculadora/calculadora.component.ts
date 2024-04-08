@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Sumadora } from '../sumadora';
+import { Sumadora } from '../../sumadora';
 
 @Component({
   selector: 'app-calculadora',

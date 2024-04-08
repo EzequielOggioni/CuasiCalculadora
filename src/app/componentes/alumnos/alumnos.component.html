@@ -1,0 +1,38 @@
+<div class="container container-fluid ">
+    <div class="row">
+
+        <div *ngFor="let alumno  of alumnos " class="col-md-2 col-sm-6">
+
+            <div *ngIf="alumno.reverso" (click)="alumno.reverso =!alumno.reverso">
+                <div >
+                    <img class="rounded-circle" [src]="textura" style="max-width: 100%;" />
+                </div>
+            </div>
+            <div *ngIf="!alumno.reverso"  (click)="alumno.reverso =!alumno.reverso">
+                <div *ngIf="alumno.foto!=''">
+                    <img class="rounded-circle" [src]="alumno.foto" style="max-width: 100%;" />
+                </div>
+
+                <div *ngIf="alumno.foto==''" class="rounded-circle col-1"
+                    style="background-color: aliceblue;color: black;align-self: center; height: 20vh;width: 100%;">
+                    <h1>{{alumno.sigla}}</h1>
+                </div>
+            </div>
+
+
+            <h4>{{alumno.nombre}} {{alumno.apellido}}</h4>
+        </div>
+    </div>
+    <input *ngIf="!this.agrega" type="button" value="Agregar" (click)="this.agrega = !this.agrega ">
+    <div *ngIf="this.agrega">
+        <input type="number" [(ngModel)]=" this.nuevo.dni" [ngClass]="{'rojo':this.nuevo.dni==0 }">
+        <input type="text" [(ngModel)]=" this.nuevo.nombre" [ngClass]="{'rojo':this.nuevo.nombre=='nombre' }">
+        <input type="text" [(ngModel)]=" this.nuevo.apellido" [ngClass]="{'rojo':this.nuevo.apellido=='apellido' }">
+        <input type="text" [(ngModel)]=" this.nuevo.sigla" [ngClass]="{'rojo':this.nuevo.sigla=='NA' }">
+        <input type="text" [(ngModel)]=" this.nuevo.foto" >
+    </div>
+    <div *ngIf="this.agrega">
+        <input type="button" value="Agregar" (click)="agregar()">
+    </div>
+
+</div>
